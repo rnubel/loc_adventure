@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  line_of_credit_id: 
+  opened_on: 2011-09-25
+  closed_on: 2011-09-25
+  minimum_payment: 
+
+two:
+  line_of_credit_id: 
+  opened_on: 2011-09-25
+  closed_on: 2011-09-25
+  minimum_payment: 

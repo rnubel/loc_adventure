@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  account_type_id: 
+  balance: 
+
+two:
+  account_type_id: 
+  balance: 

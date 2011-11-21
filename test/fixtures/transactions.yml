@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  action_id: 
+  amount: 
+  debit_account_id: 
+  credit_account_id: 
+
+two:
+  action_id: 
+  amount: 
+  debit_account_id: 
+  credit_account_id: 

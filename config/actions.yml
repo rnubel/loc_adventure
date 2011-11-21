@@ -1,0 +1,18 @@
+- id: 1
+  name: "Draw"
+  transactions: 
+    - [:customer, :accounts_receivable]
+- id: 2
+  name: "Payoff"
+  transactions: 
+    - [:accounts_past_due, :customer]
+    - [:accounts_receivable, :customer]
+- id: 3
+  name: "Interest Accrual"
+- id: 4
+  name: "Returned Payment"
+- id: 5
+  name: "Late Fee"
+- id: 6
+  name: "Return Fee"
+

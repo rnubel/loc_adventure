@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  line_of_credit_id: 
+  billing_period_id: 
+
+two:
+  line_of_credit_id: 
+  billing_period_id: 
