@@ -3,11 +3,16 @@ class Account < ActiveRecord::Base
     include ActiveHash::Enum
     
     self.data = [
-      { :id => 1,   :name => "Accounts Receivable" },
-      { :id => 2,   :name => "Accounts Past Due" },
-      { :id => 3,   :name => "Income" },
-      { :id => 4,   :name => "Disbursement" },
-      { :id => 5,   :name => "Customer" },
+      { :id => 1,   :name => "Principal" },
+      { :id => 2,   :name => "Interest" },
+      { :id => 3,   :name => "Fees" },
+      { :id => 4,   :name => "Principal Past Due" },
+      { :id => 5,   :name => "Interest Past Due" },
+      { :id => 6,   :name => "Fees Past Due" },
+      { :id => 7,   :name => "Principal Disbursement" },
+      { :id => 8,   :name => "Fees Income" },
+      { :id => 9,   :name => "Interest Income" },
+      { :id => 10,  :name => "Customer" },
     ]
 
     enum_accessor :name
