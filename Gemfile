@@ -23,11 +23,15 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'mocha'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
 end
 
 gem 'therubyracer'
 gem 'jquery-rails'
+
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

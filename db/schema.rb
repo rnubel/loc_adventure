@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111012042055) do
+ActiveRecord::Schema.define(:version => 20111224061549) do
 
   create_table "account_types", :force => true do |t|
     t.string   "label"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20111012042055) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status_id"
+    t.integer  "credit_limit"
   end
 
   create_table "transactions", :force => true do |t|
