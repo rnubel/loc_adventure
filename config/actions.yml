@@ -1,12 +1,12 @@
 - id: 1
   name: "Draw"
   transactions: 
-    - [:customer, :accounts_receivable]
+    - [:customer, :principal]
 - id: 2
   name: "Payoff"
   transactions: 
-    - [:accounts_past_due, :customer]
-    - [:accounts_receivable, :customer]
+    - [:principal_past_due, :customer]
+    - [:principal, :customer]
 - id: 3
   name: "Interest Accrual"
 - id: 4

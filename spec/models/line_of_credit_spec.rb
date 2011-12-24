@@ -72,17 +72,20 @@ describe LineOfCredit do
     loc.actions.first.type.should == Action::Type::DRAW
     loc.actions.first.amount.should == 100.0
 
-    loc.find_account(:accounts_receivable).balance.should == 100.0
+    loc.find_account(:principal).balance.should == 100.0
     loc.find_account(:customer).balance.should == -100.0
   end
 
   it "should lookup an associated account by code" do
     loc = Factory.create(:line_of_credit)
     account = Factory.create(:account, :account_type => Account::Type::CUSTOMER, :line_of_credit => loc)
+    account2 = Factory.create(:account, :account_type => Account::Type::PRINCIPAL, :line_of_credit => loc)
+    loc.save!
     loc.save!
     loc.reload
     loc.accounts.should_not be_empty
 
     loc.send('find_account', :customer).should == account
+    loc.send('find_account', :principal).should == account2
   end
 end

@@ -4,8 +4,8 @@ describe Account do
   describe Account::Type do
     it "should act like a lookup table" do
       # Note: dependent on actual values in AccountType.
-      Account::Type::ACCOUNTS_RECEIVABLE.should == Account::Type.new(:id => 1, :name => "Accounts Receivable")
-      Account::Type::ACCOUNTS_PAST_DUE.should == Account::Type.new(:id => 2, :name => "Accounts Past Due")
+      Account::Type::PRINCIPAL.should == Account::Type.new(:id => 1, :name => "Principal")
+      Account::Type::PRINCIPAL_PAST_DUE.should == Account::Type.new(:id => 2, :name => "Principal Past Due")
     end
   end
 
