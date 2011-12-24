@@ -1,7 +1,7 @@
 # Define factories.
 FactoryGirl.define do
   factory :account do
-    account_type Account::Type::ACCOUNTS_RECEIVABLE
+    account_type Account::Type::PRINCIPAL
     balance 0.0
     line_of_credit
   end

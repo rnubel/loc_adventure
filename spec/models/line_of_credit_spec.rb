@@ -19,6 +19,14 @@ describe LineOfCredit do
     loc.should_not be_nil
   end
 
+  it "should set its credit limit" do
+    loc = Factory.create :line_of_credit
+
+    loc.credit_limit = 400
+
+    loc.credit_limit.should == 400
+  end
+
   it "should have many accounts" do
     loc = Factory.create :line_of_credit
 
@@ -28,10 +36,10 @@ describe LineOfCredit do
   it "should have a scope filter for accounts by type" do
     loc = Factory.create :line_of_credit
 
-    account_one = Factory.create :account, :account_type => Account::Type::ACCOUNTS_RECEIVABLE, :line_of_credit => loc
-    account_two = Factory.create :account, :account_type => Account::Type::ACCOUNTS_PAST_DUE, :line_of_credit => loc
+    account_one = Factory.create :account, :account_type => Account::Type::PRINCIPAL, :line_of_credit => loc
+    account_two = Factory.create :account, :account_type => Account::Type::PRINCIPAL_PAST_DUE, :line_of_credit => loc
 
-    loc.accounts.of_type(Account::Type::ACCOUNTS_RECEIVABLE).should == [account_one]
+    loc.accounts.of_type(Account::Type::PRINCIPAL).should == [account_one]
   end
 
   it "should be able to be opened" do
@@ -70,13 +78,11 @@ describe LineOfCredit do
 
   it "should lookup an associated account by code" do
     loc = Factory.create(:line_of_credit)
-    account1 = Factory.create(:account, :account_type => Account::Type::ACCOUNTS_RECEIVABLE, :line_of_credit => loc)
-    account2 = Factory.create(:account, :account_type => Account::Type::CUSTOMER, :line_of_credit => loc)
+    account = Factory.create(:account, :account_type => Account::Type::CUSTOMER, :line_of_credit => loc)
     loc.save!
     loc.reload
     loc.accounts.should_not be_empty
 
-    loc.send('find_account', :accounts_receivable).should == account1
-    loc.send('find_account', :customer).should == account2
+    loc.send('find_account', :customer).should == account
   end
 end
