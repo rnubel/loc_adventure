@@ -88,4 +88,20 @@ describe LineOfCredit do
     loc.send('find_account', :customer).should == account
     loc.send('find_account', :principal).should == account2
   end
+
+  describe "waterfalling" do
+    it "should calculate the outstanding receivable balance after waterfalling over billing periods" do
+      billing_periods = [
+        mock(:minimum_payment => 100),
+        mock(:minimum_payment => 100)
+      ]
+
+      loc = Factory.create :line_of_credit
+      loc.draw(500)
+      loc.expects(:billing_periods).returns(biling_periods)
+
+      loc.principal.should == 300
+
+    end
+  end
 end

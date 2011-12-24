@@ -5,7 +5,7 @@ describe Account do
     it "should act like a lookup table" do
       # Note: dependent on actual values in AccountType.
       Account::Type::PRINCIPAL.should == Account::Type.new(:id => 1, :name => "Principal")
-      Account::Type::PRINCIPAL_PAST_DUE.should == Account::Type.new(:id => 2, :name => "Principal Past Due")
+      Account::Type::PRINCIPAL_PAST_DUE.should == Account::Type.new(:id => 4, :name => "Principal Past Due")
     end
   end
 
